@@ -8,13 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
+    body {
+        
+    }
     .pages-form {
-        margin: 50px auto;
-        width: 80%;
+        margin: 50px;
+        width: 100%;
     }
     .pages-form button {
         font-size: 14px;
-        #color: #333;
         background-color: #fddc58;
         border: none;
         padding: 15px 32px;
@@ -37,20 +39,147 @@
         margin-bottom: 20px;
         width: 60%;
     }
+    
+    ::-webkit-scrollbar {
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #fddc58;
+    }
+    .container {    
+        display: flex;
+        gap: 24px;
+        width: 70%;
+        border-radius: 12px;
+        padding: 0 30px 0 ;
+        scroll-snap-type: block ;
+        overflow-x: scroll;
+        scroll-padding: 30px;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+    .container .card {
+        width: 500px;
+        /*display: flex;
+        /*flex: 0 0 100%;*/
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        border-radius: 12px;
+        background: #fff;
+        scroll-snap-align: start;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+    .card .image {
+        height: 150px;
+        width: 150px;
+        padding: 4px;
+        background: #fddc58;
+        border-radius: 10%;
+    }
+    .image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10%;
+        border: 5px solid #fff;
+    }
+    .card h2 {
+        margin-top: 25px;
+        color: #333;
+        font-size: 22px;
+        font-weight: 600;
+        text-align: center
+    }
+    .card p {
+        margin-top: 4px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #333;
+        text-align: center;
+    }
 </style>
 <body>
-<div class="indent-6">
-    <div class="flex lg:justify-center px-6 lg:col-start-2">
-        <a href="/home"><svg class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></a>
+    <div>
+        <section class="flex px-12 py-12 lg:col-start-2">
+            <a href="/home"><img class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" src="images/logo_no.png"/></a>
+            <a href="/home"><h1 class="text-xl px-3 font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1></a>
+        </section>
+        <section class="flex px-12 py-12">
+            <p class="text-sm font-bold">Student0441</p>
+        </section>
+        <section class="about-us" style=" text-align: right;">
+            <h1 class="font-bold">Services</h1>
+        </section>
     </div>
-    <a href="/home"><h1 class="text-xl px-3 font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1></a>
-</div>
-<div class="about-us" style=" text-align: right;">
-    <h1 class="font-bold">Services</h1>
-</div>
+    
+    <section class="container">
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+    </section>
 </body>
-<footer class="mt-20 py-4 relative absolute -bottom-24">
-    <div class="pages-form">
+<footer class="py-4 relative absolute -bottom-24">
+    <div class="pages-form px-4">
         <button href="/services">SERVICES</button>
         <button href="/collection">COLLECTION</button>
         <button href="/resources">RESOURCES</button>
