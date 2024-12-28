@@ -9,6 +9,7 @@
 <body class="font-sans bg-white text-gray-800">
 <!-- Welcome Header -->
                       <header class="relative w-full max-w-2xl px-6 lg:max-w-7xl grid grid-cols-1 items-center gap-2 py-5 lg:grid-cols-1">
+                        <!-- Will work sa Laravel -->
                         @if (Route::has('login'))
                                     <nav class="-mx-3 flex flex-1 justify-start">
                                     @auth
@@ -68,6 +69,64 @@
   <section class="mt-12 px-6" style="margin: 50px auto;
          width: 80%;">
     <h2 class="text-lg font-bold text-amber-800">NEW FEATURES</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+      <!-- Card 1 -->
+      <div class="text-center">
+        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+            <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
+        </div>
+        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+      </div>
+      <!-- Card 2 -->
+      <div class="text-center">
+        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+            <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
+        </div>
+        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+      </div>
+      <!-- Card 3 -->
+      <div class="text-center">
+        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
+        </div>
+        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Announcements Section -->
+  <section class="mt-12 px-6" style="margin: 50px auto;
+         width: 80%;">
+    <h2 class="text-lg font-bold text-amber-800">ANNOUNCEMENTS</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+      <!-- Card 1 -->
+      <div class="text-center">
+        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+            <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
+        </div>
+        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+      </div>
+      <!-- Card 2 -->
+      <div class="text-center">
+        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+            <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
+        </div>
+        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+      </div>
+      <!-- Card 3 -->
+      <div class="text-center">
+        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
+        </div>
+        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- New Arrivals Section -->
+  <section class="mt-12 px-6" style="margin: 50px auto;
+         width: 80%;">
+    <h2 class="text-lg font-bold text-amber-800">NEW ARRIVALS</h2>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
       <!-- Card 1 -->
       <div class="text-center">
