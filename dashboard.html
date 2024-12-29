@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UP SLIS Library</title>
+    <title>Dashboard</title>
     <!--TailWind CSS-->
     <script src="https://cdn.tailwindcss.com"></script> 
-
+</head>
     <!--CSS-->
     <style>
         body {  
         }
+        .dashboard {
+            display: flex;
+            align-items: center;
+            margin: 50px;
+        }
         .title {
             font-size: 20px;
-            #color: #333;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -21,7 +25,6 @@
         }
         .student-title {
             font-size: 16px;
-            #color: #333;
             float: none;
             padding: 20px;
         }
@@ -31,7 +34,6 @@
         }
         .reservation-form h2 {
             font-size: 25px;
-            #color: #333;
         }
         .reservation-form table {
             width: 100%;
@@ -41,11 +43,9 @@
         }
         .reservation-form td {
             font-size: 16px;
-            #color: #333;
         }
         .reservation-form button {
             font-size: 14px;
-            #color: #333;
             background-color: #fddc58;
             border: none;
             padding: 15px 32px;
@@ -57,7 +57,6 @@
         }
         .reservation-form tab {
             font-size: 20px;
-            #color: #333;
             background-color: #fddc58;
             border: none;
             padding: 15px 32px;
@@ -70,17 +69,15 @@
 
         /* Dropdown Menu */
         .dropbtn {
-            padding: 10px;
             font-size: 16px;
             border: none;
-            float: inherit;
         }
         .dropdown {
             position: flex;
             display: block;
         }
         .dropdown-content {
-            display: none; #hidden
+            display: none; /* hidden */
             position: relative;
             background-color: #f1f1f1;
             padding: 12px 16px;
@@ -102,14 +99,12 @@
             border-radius: 10px;
         }
     </style>
-</head>
-
-
-    <body>
-        <div>
-            <div class="student-title">
-                <div class="dropdown">
-                <a class="dropbtn"><p class="text-sm font-bold">Student0441</p></a>
+    <header class="dashboard absolute-left">
+        <a href="/home" class="absolute-top"><img class="h-12 w-auto mr-2" src="images/logo_no.png" alt="Logo"></a>
+        <div>            
+            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
+            <div class="dropdown">
+                <a href="/dashboard" class="dropbtn text-sm font-bold">Student0441</a>
                 <div class="dropdown-content">
                     <h3>Welcome!</h3>
                     <p>student@up.edu.ph</p>
@@ -118,13 +113,17 @@
                     <a href="#">Request</a>
                     <a href="#">Logout</a>
                 </div>
-                </div>
             </div>
-            <div class="text-center">
-                <div class="flex lg:justify-center lg:col-start-2">
-                <svg class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+    </header>
+
+    <body>
+        <div>
+            <div class="student-title">
+                <div class="dropdown">
+                    <a class="dropbtn"><p class="text-sm font-bold">Student0441</p></a>
+                    
                 </div>
-                <h1 class="text-4xl font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1>
             </div>
         </div>
         
