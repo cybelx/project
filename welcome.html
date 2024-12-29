@@ -57,12 +57,13 @@
 
         <!-- Search Bar -->
         <div class="flex justify-center mt-6">
-        <div class="relative w-64">
-        <input type="text" placeholder="Tuklas" class="w-full border border-gray-300 rounded-full pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-600">
-        <span class="absolute top-2 left-3 text-gray-400">
-        🔍 <!-- Search Icon -->
-        </span>
-        </div>
+          <label class="relative block">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              🔍
+            </span>
+            <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-[#fddc58] focus:ring-[#fddc58] focus:ring-1 sm:text-sm" placeholder="Tuklas" type="text" name="search"/>
+          </label>
         </div>
 
         <!-- New Features Section -->
@@ -149,14 +150,14 @@
             </div>
         </section>
 
-        <!-- Footer -->
-        <img src="gabi_no.png" alt="Mascot" class="absolute left-1/2 transform -translate-x-1/2 w-50 h-48"> 
-        <footer class="mt-20 text-center py-4 relative absolute -bottom-24" style='background-color: #fddc58'>
-            <p class="mt-16 text-sm font-bold">University of the Philippines</p>
-            <p class="mb-8 text-sm">Address</p>
-        </footer>
         </div>
         </div>
         </div>
     </body>
+    <!-- Footer -->
+    <img src="gabi_no.png" alt="Mascot" class="absolute left-1/2 transform -translate-x-1/2 w-50 h-48"> 
+    <footer class="mt-20 text-center py-4 relative absolute -bottom-24" style='background-color: #fddc58'>
+        <p class="mt-16 text-sm font-bold">University of the Philippines</p>
+        <p class="mb-8 text-sm">Address</p>
+    </footer>
 </html>

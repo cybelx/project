@@ -3,29 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact UPSLIS Library</title>
+        <link rel="icon" href="logo_no.png">
+        <title>About UPSLIS Library</title>
         <script src="https://cdn.tailwindcss.com"></script>
 
         <style>
             .container {
-                display: block;
-                justify-content: space-between;   
+                display: block;   
                 align-items: center;      
             }
             .logo {
                 margin-bottom: 10px;
             }
-            .contact-us {
+            .about-us {
                 text-align: left;
                 margin: 50px;
             }
-            .contact-us h1 {
+            .about-us h1 {
                 font-size: 3em;
-                margin-bottom: 10px;
-            }
-            .contact-us p {
-                font-size: 14px;
                 margin-bottom: 20px;
+            }
+            .about-us p {
+                font-size: 14px;
+                margin-bottom: 10px;
                 width: 60%;
             }
             .image {
@@ -34,49 +34,48 @@
                 
             }
             .topright {
-                position: absolute;
+                position:absolute;
                 top: 8px;
                 right: 16px;
+                height: auto;
             }
             .bottomright {
                 position: absolute;
                 bottom: 8px;
                 right: 16px;
+                height: auto;
             }
             .image img {
-                width: 100%;
-                height: 100%;
-                object-fit: fill;
+                width: fit-content;
+                height: fit-content;
+                object-fit: cover;
             }
-            </style>
+        </style>
             
     </head>
-    <body class="font-sans bg-white text-gray-800">
-        <div class="indent-6">
-            <div class="flex lg:justify-center lg:col-start-2">
-                <svg class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
-            </div>
-            <h1 class="text-xl font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1>
+    <header class="flex items-center mt-8 mx-12">
+        <a href="/home" class="absolute-top"><img class="h-20 w-auto" src="library_logo.jpg" alt="Logo"></a>
+        <div>            
+            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
         </div>
+    </header>
+    <body class="font-sans bg-white text-gray-800 mt-8 mx-12">
+        
         <div class="container">
             <div class="image topright">
-                <img src="C:\Users\CYV\Desktop\homepage.png" alt="Image">
+                <img src="library_logo.jpg" alt="Image">
             </div>
-            <div class="contact-us">
-                <h1 class="font-bold">CONTACT US</h1>
+            <div class="image bottomright">
+                <img src="library_logo.jpg" alt="Image">
+            </div>
+            <div class="about-us" style=" text-align: justify;">
+                <h1 class="text-5xl font-bold">CONTACT US</h1>
                 <p>Contact Us</p>
                 <p>Contact Us</p>
                 <p>Contact Us</p>
                 <p>Contact Us</p>
                 <p>Contact Us</p>
-                <p>Maybe aadd something</p>
             </div>
         </div>
     </body>
-    <!-- Footer -->
-    <img src="images/gabi_no.png" alt="Mascot" class="absolute left-1/2 transform -translate-x-1/2 w-50 h-48"> 
-    <footer class="mt-20 text-center py-4 relative absolute -bottom-24" style='background-color: #fddc58'>
-        <p class="mt-16 text-sm font-bold">University of the Philippines</p>
-        <p class="text-sm">Address</p>
-    </footer>
 </html>
