@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Pictures</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffef2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 2px solid #f1d547;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: #947100;
+            font-size: 18px;
+        }
+
+        .logo img {
+            width: 50px;
+            vertical-align: middle;
+        }
+
+        .carousel-container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+
+        .arrow {
+            font-size: 2rem;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .arrow:hover {
+            color: #947100;
+        }
+
+        .description {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .sub-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        footer button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #f7d547;
+            color: #947100;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #f1c232;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" id="student-info">
+            <img src="library_logo.jpg" alt="Library Logo"> UP SLIS Library<br>STUDENT0441
+        </div>
+        <h1>FACILITY PICTURES</h1>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <span class="arrow" id="prevArrow">&#8249;</span>
+            <img src="general_references.jpg" alt="General References" id="carouselImage">
+            <span class="arrow" id="nextArrow">&#8250;</span>
+        </div>
+        <div class="description" id="roomTitle">General References</div>
+        <div class="sub-description" id="roomDescription">(description about General References)</div>
+    </div>
+
+    <footer>
+        <button>Facility Selection</button>
+        <button>Timeslot</button>
+        <button>Submission</button>
+        <button>Facility Pictures</button>
+    </footer>
+
+    <script>
+
+        const facilities = [
+            {
+                img: "general_references.jpg",
+                title: "General References",
+                description: "(description about General References)"
+            },
+            {
+                img: "reserved_section.jpg",
+                title: "Reserved Section",
+                description: "(description about Reserved Section)"
+            },
+            {
+                img: "computer_section.jpg",
+                title: "Computer Section",
+                description: "(description about Computer Section)"
+            },
+            {
+                img: "collaborative_space.jpg",
+                title: "Collaborative Space",
+                description: "(description about Collaborative Space)"
+            },
+            {
+                img: "childrens_section.jpg",
+                title: "Children's Section",
+                description: "(description about Children's Section)"
+            },
+            {
+                img: "reading_areaGF.jpg",
+                title: "Reading Area GF",
+                description: "(description about Reading Area GF)"
+            },
+            {
+                img:"reading_area2F.jpg",
+                title: "Reading Area 2F",
+                description: "(description about Reading Area 2F)"
+            },
+            {
+                img: "exhibition_area.jpg",
+                title: "Exhibition Area",
+                description: "(description about Exhibition Area)"
+            },
+            {
+                img: "reading_pods.jpg",
+                title: "Reading Pods",
+                description: "(description about Reading Pods)"
+            },
+            {
+                img: "meeting_pods.jpg",
+                title: "Meeting Pods",
+                description: "(description about Meeting Pods)"
+            }
+        ];
+
+
+        let currentIndex = 0;
+
+
+        const carouselImage = document.getElementById("carouselImage");
+        const roomTitle = document.getElementById("roomTitle");
+        const roomDescription = document.getElementById("roomDescription");
+
+        document.getElementById("prevArrow").addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + facilities.length) % facilities.length;
+            updateCarousel();
+        });
+
+        document.getElementById("nextArrow").addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % facilities.length;
+            updateCarousel();
+        });
+
+        function updateCarousel() {
+            carouselImage.src = facilities[currentIndex].img;
+            roomTitle.textContent = facilities[currentIndex].title;
+            roomDescription.textContent = facilities[currentIndex].description;
+        }
+        updateCarousel();
+    </script>
+</body>
+</html>
 
