@@ -11,11 +11,15 @@
     body {
         
     }
-    .pages-form {
+    .services {
+        display: flex;
+        align-items: center;
         margin: 50px;
-        width: 100%;
     }
-    .pages-form button {
+    .services-footer {
+        margin: 20px 60px;
+    }
+    .services-footer button {
         font-size: 14px;
         background-color: #fddc58;
         border: none;
@@ -25,25 +29,11 @@
         display: inline;
         justify-content: center;
         align-items: center;
-    }
-    .about-us {
-        text-align: left;
-        margin: 50px;
-    }
-    .about-us h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-    }
-    .about-us p {
-        font-size: 14px;
-        margin-bottom: 20px;
-        width: 60%;
-    }
-    
-    ::-webkit-scrollbar {
+    }  
+    /*::-webkit-scrollbar {
         height: 10px;
     }
-    ::-webkit-scrollbar-track {
+    /*::-webkit-scrollbar-track {
         background: #f1f1f1;
         border-radius: 25px;
     }
@@ -52,27 +42,26 @@
     }
     ::-webkit-scrollbar-thumb:hover {
         background: #fddc58;
-    }
+    }*/
     .container {    
         display: flex;
         gap: 24px;
-        width: 70%;
         border-radius: 12px;
-        padding: 0 30px 0 ;
-        scroll-snap-type: block ;
-        overflow-x: scroll;
+        padding: 30px;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
         scroll-padding: 30px;
         box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        margin: 50px 50px 0px;
+        max-height: auto;
+        justify-self: center;
     }
     .container .card {
-        width: 500px;
-        /*display: flex;
-        /*flex: 0 0 100%;*/
-        flex-direction: column;
+        width: auto;
         align-items: center;
-        padding: 30px;
+        padding: 20px;
         border-radius: 12px;
-        background: #fff;
+        background: #fddc58;  /* or #fff */
         scroll-snap-align: start;
         box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
     }
@@ -93,36 +82,39 @@
     .card h2 {
         margin-top: 25px;
         color: #333;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 600;
         text-align: center
     }
     .card p {
         margin-top: 4px;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         color: #333;
         text-align: center;
     }
 </style>
 <body>
-    <div>
-        <section class="flex px-12 py-12 lg:col-start-2">
-            <a href="/home"><img class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" src="images/logo_no.png"/></a>
-            <a href="/home"><h1 class="text-xl px-3 font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1></a>
-        </section>
-        <section class="flex px-12 py-12">
-            <p class="text-sm font-bold">Student0441</p>
-        </section>
-        <section class="about-us" style=" text-align: right;">
-            <h1 class="font-bold">Services</h1>
-        </section>
-    </div>
+    <header class="services">
+        <a href="/home"><img class="h-12 w-auto mr-2" src="images/logo_no.png" alt="Logo"></a>
+        <div>            
+            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
+            <a href="/dashboard" class="text-sm font-bold">Student0441</a>
+        </div>
+        <h1 class="text-5xl font-bold absolute right-12">Services</h1>
+    </header>
     
-    <section class="container">
-        <div class="card">
+    <div class="container">
+        <div class="card" style="width: 100vh;">
             <div class="image">
             <img src="images/gabi_no.png" alt="" />
+            </div>
+            <h2>PRINTING</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
+        </div>
+        <div class="card">
+            <div class="image">
+            <img src="images/gabi_no.png" alt="">
             </div>
             <h2>PRINTING</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
@@ -164,22 +156,15 @@
         </div>
         <div class="card">
             <div class="image">
-            <img src="images/gabi_no.png" alt="" />
+                <img src="images/gabi_no.png" alt="" />
             </div>
             <h2>PRINTING</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
         </div>
-        <div class="card">
-            <div class="image">
-            <img src="images/gabi_no.png" alt="" />
-            </div>
-            <h2>PRINTING</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elite.</p>
-        </div>
-    </section>
+    </div>
 </body>
-<footer class="py-4 relative absolute -bottom-24">
-    <div class="pages-form px-4">
+<footer class="flex">
+    <div class="services-footer">
         <button href="/services">SERVICES</button>
         <button href="/collection">COLLECTION</button>
         <button href="/resources">RESOURCES</button>
