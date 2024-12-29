@@ -1,165 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UP SLIS Library</title>
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans bg-white text-gray-800">
-<!-- Welcome Header -->
-                      <header class="relative w-full max-w-2xl px-6 lg:max-w-7xl grid grid-cols-1 items-center gap-2 py-5 lg:grid-cols-1">
-                        <!-- Will work sa Laravel -->
-                        @if (Route::has('login'))
-                                    <nav class="-mx-3 flex flex-1 justify-start">
-                                    @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-black"
-                                    >
-                                        <p class="text-sm font-bold">Welcome back!</p>
-                                        <p class="text-sm font-bold">Student0441</p> 
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UP SLIS Library</title>  
+        <link rel="icon" href="logo_no.png">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="font-sans bg-white text-gray-800">
+    <!-- Welcome Header -->
+        <header class="flex relative w-full max-w-2xl px-12 lg:max-w-7xl grid grid-cols-1 items-center gap-2 py-5 lg:grid-cols-1">
+            <!-- Will work sa Laravel -->
+            @if (Route::has('login'))
+                <nav class="justify-start px-6 mt-4">
+                    @auth
+                        <a class="text-base font-bold rounded-md px-3 py-2 text-black">
+                            Welcome!<br></a>
+                        <a
+                            href="{{ url('/dashboard') }}"
+                            class="text-base font-bold rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-amber-600/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-amber-600/80 dark:focus-visible:ring-black"
+                        >
+                            Student0441 
+                        </a>
+                    @else
+                        <a
+                            href="{{ route('login') }}"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                        >
+                            Log in
+                        </a>
 
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
+                        @if (Route::has('register'))
+                            <a
+                                href="{{ route('register') }}"
+                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                            >
+                                Register
+                            </a>
                         @endif
-                    </header>
+                    @endauth
+                </nav>
+            @endif
+            <!-- Main Header -->
+            <div class="text-center">
+                <div class="flex justify-center lg:col-start-2">
+                  <a href="/home" class="absolute-top"><img class="h-28 w-auto mr-2" src="library_logo.jpg" alt="Logo"></a>
+                </div>
+                <h1 class="text-7xl font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1>
+                <nav class="flex justify-between space-x-8 mt-4 mx-60 text-xl font-bold">
+                    <a href="#" class="hover:text-amber-600">About Us</a>
+                    <a href="#" class="hover:text-amber-600">Contact Us</a>
+                    <a href="#" class="hover:text-amber-600">Services</a>
+                </nav>
+            </div>
+        </header>
 
+        <!-- Search Bar -->
+        <div class="flex justify-center mt-6">
+          <label class="relative block">
+            <span class="sr-only">Search</span>
+            <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+              🔍
+            </span>
+            <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-[#fddc58] focus:ring-[#fddc58] focus:ring-1 sm:text-sm" placeholder="Tuklas" type="text" name="search"/>
+          </label>
+        </div>
 
-  <!-- Main Header -->
-  <div class="text-center">
-    <div class="flex lg:justify-center lg:col-start-2">
-      <svg class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
-    </div>
-    <h1 class="text-4xl font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1>
-    <nav class="flex justify-center space-x-8 mt-4 text-lg">
-      <a href="#" class="hover:text-amber-600">About Us</a>
-      <a href="#" class="hover:text-amber-600">Contact Us</a>
-      <a href="#" class="hover:text-amber-600">Services</a>
-    </nav>
-  </div>
+        <!-- New Features Section -->
+        <section class="mt-12 px-6 mx-12">
+          <h2 class="text-lg font-bold text-amber-800">NEW FEATURES</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+              <!-- Card 1 -->
+              <div class="text-center">
+                  <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                      <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
+                  </div>
+                  <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+              </div>
+              <!-- Card 2 -->
+              <div class="text-center">
+                  <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                    <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
+                  </div>
+                  <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+              </div>
+              <!-- Card 3 -->
+              <div class="text-center">
+                  <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                      <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
+                  </div>
+                  <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+              </div>
+          </div>
+        </section>
 
-  <!-- Search Bar -->
-  <div class="flex justify-center mt-6">
-    <div class="relative w-64">
-      <input type="text" placeholder="Tuklas" class="w-full border border-gray-300 rounded-full pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-amber-600">
-      <span class="absolute top-2 left-3 text-gray-400">
-        🔍 <!-- Search Icon -->
-      </span>
-    </div>
-  </div>
-
-  <!-- New Features Section -->
-  <section class="mt-12 px-6" style="margin: 50px auto;
-         width: 80%;">
-    <h2 class="text-lg font-bold text-amber-800">NEW FEATURES</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
-      <!-- Card 1 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-            <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-      <!-- Card 2 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-            <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-      <!-- Card 3 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Announcements Section -->
-  <section class="mt-12 px-6" style="margin: 50px auto;
-         width: 80%;">
-    <h2 class="text-lg font-bold text-amber-800">ANNOUNCEMENTS</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
-      <!-- Card 1 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-            <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-      <!-- Card 2 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-            <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-      <!-- Card 3 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- New Arrivals Section -->
-  <section class="mt-12 px-6" style="margin: 50px auto;
-         width: 80%;">
-    <h2 class="text-lg font-bold text-amber-800">NEW ARRIVALS</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
-      <!-- Card 1 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-            <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-      <!-- Card 2 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-            <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-      <!-- Card 3 -->
-      <div class="text-center">
-        <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
-        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
-        </div>
-        <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <img src="images/gabi_no.png" alt="Mascot" class="absolute left-1/2 transform -translate-x-1/2 w-50 h-48"> 
-  <footer class="mt-20 text-center py-4 relative absolute -bottom-24" style='background-color: #fddc58'>
-      <p class="mt-16 text-sm font-bold">University of the Philippines</p>
-      <p class="text-sm">Address</p>
-  </footer>
+        <!-- Announcements Section -->
+        <section class="mt-12 px-6 mx-12">
+            <h2 class="text-lg font-bold text-amber-800">ANNOUNCEMENTS</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+                <!-- Card 1 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                        <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
+                    </div>
+                    <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+                </div>
+                <!-- Card 2 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                      <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
+                    </div>
+                    <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+                </div>
+                <!-- Card 3 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
+                    </div>
+                    <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
                 </div>
             </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="mt-12 px-6 mx-12">
+            <h2 class="text-lg font-bold text-amber-800">NEW ARRIVALS</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+                <!-- Card 1 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                        <a href="#"><img src="placeholder-image.png" alt="Feature 1" class="w-24 h-24"></a>
+                    </div>
+                    <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+                </div>
+                <!-- Card 2 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                      <a href="#"><img src="placeholder-image.png" alt="Feature 2" class="w-24 h-24"></a>
+                    </div>
+                    <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+                </div>
+                <!-- Card 3 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-lg w-full h-40 flex items-center justify-center">
+                        <a href="#"><img src="placeholder-image.png" alt="Feature 3" class="w-24 h-24"></a>
+                    </div>
+                    <a href="#"><p class="mt-4 text-sm font-semibold">ABOUT US</p></a>
+                </div>
+            </div>
+        </section>
+
+        </div>
+        </div>
         </div>
     </body>
+    <!-- Footer -->
+    <img src="gabi_no.png" alt="Mascot" class="absolute left-1/2 transform -translate-x-1/2 w-50 h-48"> 
+    <footer class="mt-20 text-center py-4 relative absolute -bottom-24" style='background-color: #fddc58'>
+        <p class="mt-16 text-sm font-bold">University of the Philippines</p>
+        <p class="mb-8 text-sm">Address</p>
+    </footer>
 </html>

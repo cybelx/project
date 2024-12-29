@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <!--TailWind CSS-->
-    <script src="https://cdn.tailwindcss.com"></script> 
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="logo_no.png">
+        <title>Dashboard</title>
+        <!--TailWind CSS-->
+        <script src="https://cdn.tailwindcss.com"></script> 
+    </head>
     <!--CSS-->
     <style>
         body {  
         }
-        .dashboard {
-            display: flex;
-            align-items: center;
-            margin: 50px;
+        table {
+            table-layout: auto;
+            margin: auto;
+            width: 100%;
+            border: 4px solid;
+            border-color: black;
+            text-align: center;
         }
         .title {
             font-size: 20px;
@@ -23,26 +27,9 @@
             justify-content: center;
             padding: 20px;
         }
-        .student-title {
-            font-size: 16px;
-            float: none;
-            padding: 20px;
-        }
         .reservation-form {
             margin: 50px auto;
-            width: 80%;
-        }
-        .reservation-form h2 {
-            font-size: 25px;
-        }
-        .reservation-form table {
             width: 100%;
-        }
-        .reservation-form table-content {
-            display: none;
-        }
-        .reservation-form td {
-            font-size: 16px;
         }
         .reservation-form button {
             font-size: 14px;
@@ -99,59 +86,110 @@
             border-radius: 10px;
         }
     </style>
-    <header class="dashboard absolute-left">
-        <a href="/home" class="absolute-top"><img class="h-12 w-auto mr-2" src="images/logo_no.png" alt="Logo"></a>
+    <header class="flex items-center mt-8 mx-12">
+        <a href="/home" class="absolute-top"><img class="h-20 w-auto" src="library_logo.jpg" alt="Logo"></a>
         <div>            
             <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
             <div class="dropdown">
-                <a href="/dashboard" class="dropbtn text-sm font-bold">Student0441</a>
+                <a href="/dashboard" class="text-base font-bold rounded-md py-2 text-black ring-1 ring-transparent transition hover:text-amber-600/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-amber-600/80 dark:focus-visible:ring-black">
+                    Student0441
+                </a>
                 <div class="dropdown-content">
                     <h3>Welcome!</h3>
-                    <p>student@up.edu.ph</p>
-                    <a href="#">Profile</a>
                     <a href="#">Reservations</a>
                     <a href="#">Request</a>
+                    <a href="#">Statistics</a>
                     <a href="#">Logout</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <body>
-        <div>
-            <div class="student-title">
-                <div class="dropdown">
-                    <a class="dropbtn"><p class="text-sm font-bold">Student0441</p></a>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="reservation-form">
-            <h2>Requests</h2>
-            <table>
-                <tab>Reservations</tab>
-                <td>Date</td>
-                <td>Facility</td>
-                <td>Reservation Date</td>
-                <td>Confirmation</td>
-            </table>
-            <div class="text-center">
-                <h3>No request</h3>
-                <button>Make a reservation</button>
+    <body>                
+        <div class="mt-12 mx-40">
+            <h2 class="text-4xl font-bold mb-4 border-b-4 border-b-slate rounded-sm w-full">Dashboard</h2>
+            <fieldset>
+              
+                <input id="reservations" class="peer/reservations " type="radio" name="status" checked />
+                <label for="reservations" class="peer-checked/reservations:text-amber-800 mr-4">Reservations</label>
+              
+                <input id="requests" class="peer/requests" type="radio" name="status" />
+                <label for="requests" class="peer-checked/requests:text-amber-800 mr-4">Requests</label>
+              
+                <div class="hidden peer-checked/reservations:block">
+                    <table>
+                        <thead class="bg-amber-200">
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Facility</th>
+                                <th>Reservation Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="h-10 odd:bg-white even:bg-amber-100">
+                                <td>1</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="h-10 odd:bg-white even:bg-amber-100">
+                                <td>2</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="odd:bg-white even:bg-amber-100">
+                                <td>3</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
             
-        </div>
-        <div class="reservation-form">
-            <table>
-                <tab>Books</tab>
-                <td>Date</td>
-                <td>User</td>
-                <td>Title</td>
-                <td>Checkout Date</td>
-                <td>Due</td>
-            </table>
-            <h3>No request</h3>
-            <button>Request a book</button>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="hidden peer-checked/requests:block">
+                    <table>
+                        <thead class="bg-amber-200">
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Title</th>
+                                <th>Checkout Date</th>
+                                <th>Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>                           
+                            <tr class="h-10 odd:bg-white even:bg-amber-100">
+                                <td>1</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="h-10 odd:bg-white even:bg-amber-100">
+                                <td>2</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="odd:bg-white even:bg-amber-100">
+                                <td>3</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
         </div>
     </body>
 </html>
