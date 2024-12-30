@@ -4,77 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="logo_no.png">
-        <title>About UPSLIS Library</title>
+        <title>Contact Us</title>
         <script src="https://cdn.tailwindcss.com"></script>
 
         <style>
-            .container {
-                display: block;   
-                align-items: center;      
-            }
-            .logo {
-                margin-bottom: 10px;
-            }
-            .about-us {
-                text-align: left;
-                margin: 50px;
-            }
-            .about-us h1 {
-                font-size: 3em;
-                margin-bottom: 20px;
-            }
-            .about-us p {
-                font-size: 14px;
-                margin-bottom: 10px;
+            .contact-us {
+                text-align: justify;
+                margin: 50px 0px 50px 50px;
                 width: 60%;
             }
+            .contact-us p {
+                font-size: 14px;
+                margin-bottom: 10px;
+                margin-right: 30px;
+            }
             .image {
-                width: 35%;
-                height: 100%;
-                
-            }
-            .topright {
-                position:absolute;
-                top: 8px;
-                right: 16px;
-                height: auto;
-            }
-            .bottomright {
-                position: absolute;
-                bottom: 8px;
-                right: 16px;
-                height: auto;
+                float: right;
+                width: 50%;
+                margin: 0px 10px 0px 0px;
             }
             .image img {
-                width: fit-content;
-                height: fit-content;
-                object-fit: cover;
+                width: 100%;
+                height: 50%;
+                object-fit: fill;
             }
         </style>
             
     </head>
-    <header class="flex items-center mt-8 mx-12">
+    <header class="flex items-center mt-8 mx-8">
         <a href="/home" class="absolute-top"><img class="h-20 w-auto" src="library_logo.jpg" alt="Logo"></a>
         <div>            
             <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
         </div>
     </header>
-    <body class="font-sans bg-white text-gray-800 mt-8 mx-12">
-        
-        <div class="container">
-            <div class="image topright">
-                <img src="library_logo.jpg" alt="Image">
+    <body class="font-sans bg-white text-gray-800 mt-8 ml-12">
+        <div class="flex">
+            <div class="contact-us">
+                <h1 class="text-5xl font-bold mb-4">CONTACT US</h1>
+                <p class="text-xl font-bold">Facebook</p>
+                <p class="text-xl font-bold">Zoom</p>
             </div>
-            <div class="image bottomright">
-                <img src="library_logo.jpg" alt="Image">
-            </div>
-            <div class="about-us" style=" text-align: justify;">
-                <h1 class="text-5xl font-bold">CONTACT US</h1>
-                <p>Contact Us</p>
-                <p>Contact Us</p>
-                <p>Contact Us</p>
-                <p>Contact Us</p>
-                <p>Contact Us</p>
+            <div class="image">
+                <img src="logo_no.png" alt="Image">
             </div>
         </div>
     </body>
