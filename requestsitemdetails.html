@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-container .logo-text {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-container .student-number {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .table-container {
+            margin: 20px auto;
+            width: 80%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        .table-container table {
+            width: 100%;
+            border: 1px solid #ff0000;
+        }
+
+        .table-container th, .table-container td {
+            border: 1px solid #ff0000;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .table-container th {
+            background-color: #ffffff;
+            font-weight: bold;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            background-color: white; 
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer a {
+            text-decoration: none;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            background-color: #ffd700; 
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #ffcc00; 
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="logo-container">
+            <img src="library_logo.jpg" alt="Library Logo">
+            <div>
+                <div class="logo-text">UP SLIS Library</div>
+                <div class="student-number">STUDENT0441</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>CALL NUMBER</th>
+                    <th>DATE/TIME REQUESTED</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <a href="requestsitemselection.html">ITEM SELECTION</a>
+        <a href="requestsitemdetails.html">ITEM DETAILS</a>
+        <a href="#submission">SUBMISSION</a>
+    </div>
+
+</body>
+</html>
