@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo_no.png">
+    <title>Statistics</title>
+    <!--TailWind CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite -->
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+</head>
+<style>
+    .resources {
+        display: flex;
+        align-items: center;
+        margin: 50px;
+    }
+    .resources-footer {
+        margin: 20px 60px;
+    }
+    .resources-footer button {
+        font-size: 14px;
+        background-color: #fddc58;
+        border: none;
+        padding: 15px 32px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: inline;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<header class="resources">
+    <div class="flex">
+        <a href="/home"><img class="h-20 w-auto" src="library_logo.jpg" alt="Logo"></a>
+        <h1 class="text-5xl font-bold absolute right-12">STATISTICS</h1>
+        <div class="block mt-4">
+            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
+            <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-bold text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-amber-600 md:me-0 dark:text-black" type="button">
+                ADMIN0351
+            </button>
+            <div id="dropdownAvatarName" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-amber-100 dark:divide-white">
+                <div class="px-4 py-3 text-sm text-white dark:text-black">
+                    <div>Welcome</div>
+                    <div class="font-bold truncate">Student0441</div>
+                </div>
+                <ul class="py-2 text-sm text-black dark:text-black" aria-labelledby="dropdownUserAvatarNameButton">
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Reservations</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Requests</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hidden px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Statistics</a>
+                    </li>
+                </ul>
+                <div class="py-2">
+                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100 dark:hover:bg-amber-200 dark:text-black dark:hover:text-black">Sign out</a>
+                </div>
+            </div>
+        </div> 
+    </div>
+</header>
+
+<body>
+    <div class="text-center">
+        <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="text-black bg-[#fddc58] hover:bg-amber-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-[#fddc58] dark:hover:bg-amber-200 dark:focus:ring-amber-200" type="button">Select<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
+        </button>
+        <div id="dropdownDefaultRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-[#fddc58] dark:divide-gray-600">
+            
+        <fieldset>
+            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200">
+                <li class="flex">
+                    <input id="radio-1" type="radio" checked name="status" class="peer/radio-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="radio-1" class="peer-checked/radio-1:text-black text-sm font-medium ms-2 dark:text-black">Reference Queries</label>
+                </li>
+                <li class="flex">
+                    <input id="radio-2" type="radio" name="status" class="peer/radio-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="radio-2" class="peer-checked/radio-2:text-black text-sm font-medium ms-2 dark:text-black">Thesis and Dissertations</label>
+                </li>    
+                <li class="flex">
+                    <input id="radio-3" type="radio" name="status" class="peer/radio-3 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                    <label for="radio-3" class="peer-checked/radio-3:text-black ms-2 text-sm font-medium dark:text-black">Website</label>
+                </li>    
+            </ul>
+            <div class="hidden peer-checked/radio-1:block">
+                <div class="contents space-y-4 mx-auto">
+                    <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
+                    <h3 class="text-center font-bold text-lg">Insert something</h3>
+                </div>
+            </div>   
+            <div class="hidden peer-checked/radio-2:block">
+                <div class="contents space-y-4 mx-auto">
+                    <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
+                    <h3 class="text-center font-bold text-lg">Insert something2</h3>
+                </div>
+            </div>
+            <div class="hidden peer-checked/radio-3:block">
+                <div class="contents space-y-4 mx-auto">
+                    <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
+                    <h3 class="text-center font-bold text-lg">Insert something3</h3>
+                </div>
+            </div>               
+        </fieldset>
+    </div>
+    <div class="contents space-y-4 mx-auto">
+        <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
+        <h3 class="text-center font-bold text-lg">Insert something</h3>
+    </div>    
+</body>
+<footer class="flex">
+    <div class="resources-footer">
+        <button href="/services">SERVICES</button>
+        <button href="/collection">COLLECTION</button>
+        <button href="/resources">RESOURCES</button>
+    </div>
+</footer>
+</html>
