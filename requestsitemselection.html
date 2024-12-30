@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-container .logo-text {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .logo-container .student-number {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            margin-left: 5px;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .grid .card {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: #fff9cc;
+            color: #333;
+            font-weight: bold;
+            border: 1px solid #ffd700;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffd700;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .filter-options {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .filter-options select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="library_logo.jpg" alt="Library Logo">
+            <div>
+                <div class="logo-text">UP SLIS Library</div>
+                <div class="student-number">STUDENT0441</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>REQUESTS</h2>
+        <p>Please select the resource you would like to reserve.</p>
+
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for resources">
+            <button onclick="searchResource()">Search</button>
+            <button onclick="toggleFilter()">All Fields</button>
+        </div>
+
+        <div class="filter-options" id="filter-options">
+            <select id="filter-select">
+                <option value="All">All Fields</option>
+                <option value="Author">Author</option>
+                <option value="Title">Title</option>
+                <option value="Subject">Subject</option>
+                <option value="Call Number">Call Number</option>
+                <option value="ISBN/ISSN">ISBN/ISSN</option>
+            </select>
+        </div>
+
+        <div class="grid">
+            <a href="#fiction" class="card">
+                <span>FICTION</span>
+            </a>
+            <a href="#thesis" class="card">
+                <span>THESIS</span>
+            </a>
+            <a href="#periodicals" class="card">
+                <span>PERIODICALS</span>
+            </a>
+            <a href="#reference" class="card">
+                <span>REFERENCE</span>
+            </a>
+            <a href="#general" class="card">
+                <span>GENERAL CIRCULATION</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="#item-selection">ITEM SELECTION</a>
+        <a href="#item-details">ITEM DETAILS</a>
+        <a href="#submission">SUBMISSION</a>
+    </div>
+
+    <script>
+        function toggleFilter() {
+            const filterOptions = document.getElementById('filter-options');
+            if (filterOptions.style.display === 'none' || !filterOptions.style.display) {
+                filterOptions.style.display = 'block';
+            } else {
+                filterOptions.style.display = 'none';
+            }
+        }
+
+        function searchResource() {
+            const query = document.getElementById('search').value.trim();
+            const filter = document.getElementById('filter-select').value;
+
+            if (query) {
+                alert(`Searching for: "${query}" in category: "${filter}"`);
+
+            } else {
+                alert('Please enter a search query.');
+            }
+        }
+    </script>
+</body>
+</html>
