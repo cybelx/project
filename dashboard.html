@@ -5,111 +5,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="logo_no.png">
         <title>Dashboard</title>
-        <!--TailWind CSS-->
-        <script src="https://cdn.tailwindcss.com"></script> 
+        <!-- TailWind CSS-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Flowbite -->
+        <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     </head>
     <!--CSS-->
     <style>
         body {  
+
         }
         table {
             table-layout: auto;
-            margin: auto;
             width: 100%;
-            border: 4px solid;
-            border-color: black;
+            margin-top: 8px;
             text-align: center;
+            overflow-x: scroll;
+            overflow-y: scroll;
         }
-        .title {
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .reservation-form {
-            margin: 50px auto;
-            width: 100%;
-        }
-        .reservation-form button {
-            font-size: 14px;
-            background-color: #fddc58;
-            border: none;
-            padding: 15px 32px;
-            cursor: pointer;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .reservation-form tab {
-            font-size: 20px;
-            background-color: #fddc58;
-            border: none;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 4px 2px;
-            border-radius: 8px;
-        }
-
-        /* Dropdown Menu */
-        .dropbtn {
-            font-size: 16px;
-            border: none;
-        }
-        .dropdown {
-            position: flex;
-            display: block;
-        }
-        .dropdown-content {
-            display: none; /* hidden */
-            position: relative;
-            background-color: #f1f1f1;
-            padding: 12px 16px;
-        }
-        .dropdown-content a {
-            color: #443800;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: flex;
-        }
-        .dropdown-content a:hover {
-            background-color: #ffe992;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown:hover .dropbtn {
-            padding: 10px;
-            border-radius: 10px;
+        tr {
+            height: 1em;
         }
     </style>
-    <header class="flex items-center mt-8 mx-12">
-        <a href="/home" class="absolute-top"><img class="h-20 w-auto" src="library_logo.jpg" alt="Logo"></a>
-        <div>            
-            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
-            <div class="dropdown">
-                <a href="/dashboard" class="text-base font-bold rounded-md py-2 text-black ring-1 ring-transparent transition hover:text-amber-600/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-amber-600/80 dark:focus-visible:ring-black">
-                    Student0441
-                </a>
-                <div class="dropdown-content">
-                    <h3>Welcome!</h3>
-                    <a href="#">Reservations</a>
-                    <a href="#">Request</a>
-                    <a href="#">Statistics</a>
-                    <a href="#">Logout</a>
-                </div>
+    <header class="mt-12 mx-8">
+            <div class="flex">
+                <a href="/home"><img class="h-20 w-auto" src="library_logo.jpg" alt="Logo"></a>
+                <div class="block mt-4">
+                    <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
+                    <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-bold text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-amber-600 md:me-0 dark:text-black" type="button">
+                        Student0441
+                    </button>
+                
+                    <div id="dropdownAvatarName" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-amber-100 dark:divide-white">
+                        <div class="px-4 py-3 text-sm text-white dark:text-black">
+                            <div>Welcome</div>
+                            <div class="font-bold truncate">Student0441</div>
+                        </div>
+                        <ul class="py-2 text-sm text-black dark:text-black" aria-labelledby="dropdownUserAvatarNameButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Reservations</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Requests</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hidden px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Statistics</a>
+                            </li>
+                        </ul>
+                        <div class="py-2">
+                            <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-gray-100 dark:hover:bg-amber-200 dark:text-black dark:hover:text-black">Sign out</a>
+                        </div>
+                    </div>
+                </div> 
             </div>
-        </div>
     </header>
 
-    <body>                
-        <div class="mt-12 mx-40">
+    <body>
+        <div class="w-3/4 mt-12 mx-36">
             <h2 class="text-4xl font-bold mb-4 border-b-4 border-b-slate rounded-sm w-full">Dashboard</h2>
             <fieldset>
-              
                 <input id="reservations" class="peer/reservations " type="radio" name="status" checked />
                 <label for="reservations" class="peer-checked/reservations:text-amber-800 mr-4">Reservations</label>
               
@@ -128,15 +85,43 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="h-10 odd:bg-white even:bg-amber-100">
+                            <tr class="odd:bg-white even:bg-amber-100">
                                 <td>1</td>
                                 <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
                                 <td>Malcolm Lockyer</td>
                                 <td>1961</td>
                                 <td>Confirm</td>
                             </tr>
-                            <tr class="h-10 odd:bg-white even:bg-amber-100">
+                            <tr class="odd:bg-white even:bg-amber-100">
                                 <td>2</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="odd:bg-white even:bg-amber-100">
+                                <td>3</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="odd:bg-white even:bg-amber-100">
+                                <td>3</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="odd:bg-white even:bg-amber-100">
+                                <td>3</td>
+                                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                                <td>Malcolm Lockyer</td>
+                                <td>1961</td>
+                                <td>Confirm</td>
+                            </tr>
+                            <tr class="odd:bg-white even:bg-amber-100">
+                                <td>3</td>
                                 <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
                                 <td>Malcolm Lockyer</td>
                                 <td>1961</td>
@@ -192,4 +177,10 @@
             </fieldset>
         </div>
     </body>
+    <!-- Footer -->
+    <img src="gabi_no.png" alt="Mascot" class="absolute left-1/2 transform -translate-x-1/2 w-50 h-48"> 
+    <footer class="mt-20 text-center py-4 relative absolute -bottom-24" style='background-color: #fddc58'>
+        <p class="mt-16 text-sm font-bold">University of the Philippines</p>
+        <p class="mb-8 text-sm">Address</p>
+    </footer>
 </html>
