@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo_no.png">
     <title>UPSLIS Library Collections</title>
     <!--TailWind CSS-->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
-    .pages-form {
-        margin: 50px auto;
-        width: 80%;
+    .collections {
+        display: flex;
+        align-items: center;
+        margin: 50px;
     }
-    .pages-form button {
+    .collections-footer {
+        margin: 20px 60px;
+    }
+    .collections-footer button {
         font-size: 14px;
-        #color: #333;
         background-color: #fddc58;
         border: none;
         padding: 15px 32px;
@@ -23,32 +27,17 @@
         display: inline;
         justify-content: center;
         align-items: center;
-    }
-    .about-us {
-        text-align: right;
-        margin: 50px;
-    }
-    .about-us h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-    }
-    .about-us p {
-        font-size: 14px;
-        margin-bottom: 20px;
-        width: 60%;
-    }
+    }  
 </style>
 
 <body>
-<div class="indent-6">
-    <div class="flex lg:justify-center px-6 lg:col-start-2">
-        <a href="/home"><svg class="h-12 w-auto text-white lg:h-10 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></a>
-    </div>
-    <a href="/home"><h1 class="text-xl px-3 font-bold text-amber-800 mt-4">UP SLIS LIBRARY</h1></a>
-</div>
-<div class="about-us" style=" text-align: right;">
-    <h1 class="font-bold">Library Collection</h1>
-</div>
+    <header class="collections">
+        <a href="/home"><img class="h-20 w-auto mr-2" src="library_logo.jpg" alt="Logo"></a>
+        <div>            
+            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY</a>
+        </div>
+        <h1 class="text-5xl font-bold absolute right-12">LIBRARY COLLECTION</h1>
+    </header>
 <!-- Centered all for ease; I guess we don't have to worry about responsiveness for now -->
 <section class="container mx-auto">
     <a class="relative w-auto">
@@ -73,8 +62,8 @@
     </a>
 </section>
 </body>
-<footer class="mt-20 text-align py-4 relative absolute -bottom-24">
-    <div class="pages-form">
+<footer class="flex">
+    <div class="collections-footer">
         <button href="/services">SERVICES</button>
         <button href="/collection">COLLECTION</button>
         <button href="/resources">RESOURCES</button>
