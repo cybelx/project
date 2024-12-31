@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo_no.png">
+    <title>UPSLIS Library Services</title>
+    <!--TailWind CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    body {
+        
+    }
+    .services {
+        display: flex;
+        align-items: center;
+        margin: 50px;
+    }
+    .services-footer {
+        margin: 20px 60px;
+    }
+    .services-footer button {
+        font-size: 14px;
+        background-color: #fddc58;
+        border: none;
+        padding: 15px 32px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: inline;
+        justify-content: center;
+        align-items: center;
+    }
+    section button {
+        font-size: 21px;
+        color: white;
+        background-color: #e5c53f;
+        border: none;
+        padding: 15px 32px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: inline;
+        justify-content: center;
+        align-items: center;
+    }
+    /*::-webkit-scrollbar {
+        height: 10px;
+    }
+    /*::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 25px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #fddc58;
+    }*/
+</style>
+<body>
+    <header class="services">
+        <a href="/home"><img class="h-20 w-auto mr-2" src="library_logo.jpg" alt="Logo"></a>
+        <div>            
+            <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY<br></a>
+            <a href="/dashboard" class="text-sm font-bold">Student0441</a>
+        </div>
+    </header>
+    <div class="flex flex-column gap-4 p-7">
+        <section class="block basis-2/5 text-center space-y-5">
+            <h1 class="text-5xl font-bold">Requests</h1>
+            <button class="hover:bg-yellow-400">Confirm</button>
+            <p class="text-red-500">Apologies! (Call no.) has already been reserved for someone else!</p>
+        </section>
+        <section class="block basis-3/5 text-center border-2 p-3 rounded-xl">
+            <h2 class="font-bold text-2xl">Request details review</h2>
+            <table class="w-full table-fixed">
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>Juan Dela Cruz</td>
+                    </tr>
+                    <tr>
+                        <td>College</td>
+                        <td>SLIS</td>
+                    </tr>
+                    <tr>
+                        <td>Year level</td>
+                        <td>1st year</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+            <h3 class="font-bold">Items</h3>
+            <table class="w-full table-fixed">
+                <tbody>
+                    <tr>
+                        <td>Juan Dela Cruz</td>
+                        <td>(Call no.)</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Dela Cruz</td>
+                        <td>(Call no.)</td>
+                    </tr>
+                    <tr>
+                        <td>ADD MORE</td>
+                        <td>AS NEEDED</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+<footer class="flex">
+    <div class="services-footer">
+        <button>ITEM SELECTION</button>
+        <button>ITEM DETAILS</button>
+        <button>SUBMISSION</button>
+    </div>
+</footer>
+</html>
