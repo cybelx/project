@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo_no.png">
+    <title>Library Reservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffef2;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            padding: 10px 20px;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 20px;
+        }
+
+        .form-section {
+            width: 30%;
+        }
+
+        .form-section .dropdown {
+            margin: 20px 0;
+            background-color: #f7d547;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .dropdown label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .dropdown select,
+        .dropdown input[type="date"] {
+            width: 90%;
+            padding: 8px 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background-color: #fff;
+        }
+
+        .carousel-section {
+        width: 60%;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; 
+        }
+
+        .carousel {
+            margin: 10px 0; 
+        }
+
+        .carousel img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .navigation-buttons button {
+            padding: 10px 20px;
+            background-color: #f7d547;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #f1c232;
+        }
+
+        .description {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .sub-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+            background-color: #f7d547;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #f1c232;
+        }
+    </style>
+</head>
+<header>
+    <div class="flex">
+        <a href="/"><img class="h-20 w-auto" src="logo_no.png" alt="Logo"></a>
+        <div class="block mt-4">
+            <a href="/" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY</a>
+            <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-bold text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-amber-600 md:me-0 dark:text-black" type="button">
+                {{ auth()->user()->name }}
+            </button>
+            
+            <div id="dropdownAvatarName" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-amber-100 dark:divide-white">
+                <div class="px-4 py-3 text-sm text-white dark:text-black">
+                    <div>Welcome</div>
+                    <div class="font-bold truncate">{{ auth()->user()->email }}</div>
+                </div>
+                <ul class="py-2 text-sm text-black dark:text-black" aria-labelledby="dropdownUserAvatarNameButton">
+                    <li>
+                        <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Reservations</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Requests</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hidden px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Statistics</a>
+                    </li>
+                </ul>
+                <div class="py-2">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-sm w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">
+                            Log out
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+</header>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <div class="dropdown">
+                <label for="date">Date</label>
+                <input type="date" id="date">
+            </div>
+            <div class="dropdown">
+                <label for="facility">Facility</label>
+                <select id="facility" onchange="updateFacilityFromDropdown()">
+                    <option value="0">General References</option>
+                    <option value="1">Reserved Section</option>
+                    <option value="2">Computer Section</option>
+                    <option value="3">Collaborative Space</option>
+                    <option value="4">Children's Section</option>
+                    <option value="5">Reading Area GF</option>
+                    <option value="6">Reading Area 2F</option>
+                    <option value="7">Exhibition Area</option>
+                    <option value="8">Reading Pods</option>
+                    <option value="9">Meeting Pods</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <label for="timeslot">Time Slot</label>
+                <select id="timeslot">
+                    <option value="8-9AM">8:00 - 9:00 AM</option>
+                    <option value="9-10AM">9:00 - 10:00 AM</option>
+                    <option value="10-11AM">10:00 - 11:00 AM</option>
+                    <option value="11-12PM">11:00 - 12:00 PM</option>
+                    <option value="1-2PM">1:00 - 2:00 PM</option>
+                    <option value="2-3PM">2:00 - 3:00 PM</option>
+                    <option value="3-4PM">3:00 - 4:00 PM</option>
+                    <option value="4-5PM">4:00 - 5:00 PM</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="carousel-section">
+            <div class="carousel">
+                <img src="general_references.jpg" alt="General References" id="carouselImage">
+            </div>
+            <div class="description" id="roomTitle">General References</div>
+            <div class="sub-description" id="roomDescription">(Description about General References)</div>
+            <div class="navigation-buttons">
+                <button onclick="prevFacility()">Previous</button>
+                <button onclick="nextFacility()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="submit-btn">Submit</button>
+
+    <script>
+        const facilities = [
+            {
+                img: "general_references.jpg",
+                title: "General References",
+                description: "(Description about General References)"
+            },
+            {
+                img: "reserved_section.jpg",
+                title: "Reserved Section",
+                description: "(Description about Reserved Section)"
+            },
+            {
+                img: "computer_section.jpg",
+                title: "Computer Section",
+                description: "(Description about Computer Section)"
+            },
+            {
+                img: "collaborative_space.jpg",
+                title: "Collaborative Space",
+                description: "(Description about Collaborative Space)"
+            },
+            {
+                img: "childrens_section.jpg",
+                title: "Children's Section",
+                description: "(Description about Children's Section)"
+            },
+            {
+                img: "reading_areaGF.jpg",
+                title: "Reading Area GF",
+                description: "(Description about Reading Area GF)"
+            },
+            {
+                img: "reading_area2F.jpg",
+                title: "Reading Area 2F",
+                description: "(Description about Reading Area 2F)"
+            },
+            {
+                img: "exhibition_area.jpg",
+                title: "Exhibition Area",
+                description: "(Description about Exhibition Area)"
+            },
+            {
+                img: "reading_pods.jpg",
+                title: "Reading Pods",
+                description: "(Description about Reading Pods)"
+            },
+            {
+                img: "meeting_pods.jpg",
+                title: "Meeting Pods",
+                description: "(Description about Meeting Pods)"
+            }
+        ];
+
+        let currentIndex = 0;
+        const carouselImage = document.getElementById("carouselImage");
+        const roomTitle = document.getElementById("roomTitle");
+        const roomDescription = document.getElementById("roomDescription");
+        const facilityDropdown = document.getElementById("facility");
+
+        function updateCarousel() {
+            const facility = facilities[currentIndex];
+            carouselImage.src = facility.img;
+            roomTitle.textContent = facility.title;
+            roomDescription.textContent = facility.description;
+            facilityDropdown.value = currentIndex;
+        }
+
+        function prevFacility() {
+            currentIndex = (currentIndex - 1 + facilities.length) % facilities.length;
+            updateCarousel();
+        }
+
+        function nextFacility() {
+            currentIndex = (currentIndex + 1) % facilities.length;
+            updateCarousel();
+        }
+
+        function updateFacilityFromDropdown() {
+            currentIndex = parseInt(facilityDropdown.value, 10);
+            updateCarousel();
+        }
+
+        updateCarousel();
+    </script>
+</body>
+</html>
