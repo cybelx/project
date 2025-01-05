@@ -3,35 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo_no.png">
     <title>Facility Reservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
             background-color: #fffef2;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            text-align: center;
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 10px 20px;
-            background-color: white;
             border-bottom: 2px solid #f1d547;
-        }
-
-        .logo {
-            font-weight: bold;
-            color: #947100;
-            font-size: 18px;
-        }
-
-        .logo img {
-            width: 50px;
-            vertical-align: middle;
         }
 
         .container {
@@ -121,15 +104,48 @@
         }
     </style>
 </head>
+<header>
+    <div class="flex">
+        <a href="/"><img class="h-20 w-auto" src="logo_no.png" alt="Logo"></a>
+        <div class="block mt-4">
+            <a href="/" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY</a>
+            <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-bold text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-amber-600 md:me-0 dark:text-black" type="button">
+                {{ auth()->user()->name}}
+            </button>
+            
+            <div id="dropdownAvatarName" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-amber-100 dark:divide-white">
+                <div class="px-4 py-3 text-sm text-white dark:text-black">
+                    <div>Welcome</div>
+                    <div class="font-bold truncate">{{ auth()->user()->email}}</div>
+                </div>
+                <ul class="py-2 text-sm text-black dark:text-black" aria-labelledby="dropdownUserAvatarNameButton">
+                    <li>
+                        <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Reservations</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Requests</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hidden px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Statistics</a>
+                    </li>
+                </ul>
+                <div class="py-2">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-sm w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">
+                            Log out
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <p class="text-3xl font-bold absolute top-8 right-12">RESERVATION</p>
+</header>
 <body>
-
-    <header>
-        <div class="logo">
-            <img src="library_logo.jpg" alt="Library Logo"> UP SLIS Library<br>STUDENT0441
-        </div>
-        <h1>RESERVATIONS</h1>
-    </header>
-
     <div class="container">
         <div class="form-section">
             <div class="dropdown">
@@ -164,7 +180,7 @@
         <div class="carousel-section">
             <div class="carousel-placeholder">
                 <img src="gabi_no.png" alt="Services Description">
-                <a href="http://127.0.0.1:3000/services.html">Services Description</a>
+                <a href="/services">Services Description</a>
             </div>
             <button class="submit-btn">Submit</button>
         </div>

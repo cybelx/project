@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo_no.png">
     <title>Library Reservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f9f9f9;
-            color: #333;
         }
 
         header {
-            display: flex;
-            align-items: center;
             padding: 10px 20px;
-            background-color: white;
             border-bottom: 1px solid #e0e0e0;
         }
 
@@ -95,12 +91,43 @@
 
 
     <header>
-        <div class="logo-container">
-            <img src="library_logo.jpg" alt="Library Logo">
-            <div>
-                <div class="logo-text">UP SLIS Library</div>
-                <div class="student-number">STUDENT0441</div>
-            </div>
+        <div class="flex">
+            <a href="/home"><img class="h-20 w-auto" src="logo_no.png" alt="Logo"></a>
+            <div class="block mt-4">
+                <a href="/home" class="text-xl font-bold text-amber-800">UP SLIS LIBRARY</a>
+                <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm pe-1 font-bold text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-amber-600 md:me-0 dark:text-black" type="button">
+                    {{ auth()->user()->name}}
+                </button>
+                
+                <div id="dropdownAvatarName" class="hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-amber-100 dark:divide-white">
+                    <div class="px-4 py-3 text-sm text-white dark:text-black">
+                        <div>Welcome</div>
+                        <div class="font-bold truncate">{{ auth()->user()->email}}</div>
+                    </div>
+                    <ul class="py-2 text-sm text-black dark:text-black" aria-labelledby="dropdownUserAvatarNameButton">
+                        <li>
+                            <a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Reservations</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Requests</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hidden px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">Statistics</a>
+                        </li>
+                    </ul>
+                    <div class="py-2">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="text-sm w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-amber-200 dark:hover:text-black">
+                                Log out
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div> 
         </div>
     </header>
 
@@ -144,6 +171,7 @@
     </div>
 
     <div class="footer">
+        <!-- Update yung routes-->
         <a href="requestsitemselection.html">ITEM SELECTION</a>
         <a href="requestsitemdetails.html">ITEM DETAILS</a>
         <a href="#submission">SUBMISSION</a>
