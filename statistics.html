@@ -74,47 +74,135 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/></svg>
         </button>
         <div id="dropdownDefaultRadio" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-[#fddc58] dark:divide-gray-600">
-            
-        <fieldset>
-            <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200">
-                <li class="flex">
-                    <input id="radio-1" type="radio" checked name="status" class="peer/radio-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="radio-1" class="peer-checked/radio-1:text-black text-sm font-medium ms-2 dark:text-black">Reference Queries</label>
-                </li>
-                <li class="flex">
-                    <input id="radio-2" type="radio" name="status" class="peer/radio-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="radio-2" class="peer-checked/radio-2:text-black text-sm font-medium ms-2 dark:text-black">Thesis and Dissertations</label>
-                </li>    
-                <li class="flex">
-                    <input id="radio-3" type="radio" name="status" class="peer/radio-3 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                    <label for="radio-3" class="peer-checked/radio-3:text-black ms-2 text-sm font-medium dark:text-black">Website</label>
-                </li>    
-            </ul>
-            <div class="hidden peer-checked/radio-1:block">
-                <div class="contents space-y-4 mx-auto">
-                    <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
-                    <h3 class="text-center font-bold text-lg">Insert something</h3>
-                </div>
-            </div>   
-            <div class="hidden peer-checked/radio-2:block">
-                <div class="contents space-y-4 mx-auto">
-                    <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
-                    <h3 class="text-center font-bold text-lg">Insert something2</h3>
-                </div>
-            </div>
-            <div class="hidden peer-checked/radio-3:block">
-                <div class="contents space-y-4 mx-auto">
-                    <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
-                    <h3 class="text-center font-bold text-lg">Insert something3</h3>
-                </div>
-            </div>               
-        </fieldset>
+            <fieldset>
+                <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200">
+                    <li class="flex">
+                        <input id="radio-1" type="radio" checked name="status" class="peer/radio-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                        <label for="radio-1" class="peer-checked/radio-1:text-black text-sm font-medium ms-2 dark:text-black">Reference Queries</label>
+                    </li>
+                    <li class="flex">
+                        <input id="radio-2" type="radio" name="status" class="peer/radio-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                        <label for="radio-2" class="peer-checked/radio-2:text-black text-sm font-medium ms-2 dark:text-black">Thesis and Dissertations</label>
+                    </li>
+                    <!-- Can't check for status on website visits; needs a text-only display -->
+                </ul>
+            </fieldset>
+        </div>
     </div>
-    <div class="contents space-y-4 mx-auto">
-        <img src="placeholder.jpg" alt="Placeholder image" class="bg-blue-100 block mx-auto m-3.5 rounded-2xl size-auto"/>
-        <h3 class="text-center font-bold text-lg">Insert something</h3>
-    </div>    
+    <div class="py-6" id="donut-chart"></div>
 </body>
+<script> // rendered w Flowbite; SB Admin 2 uses a different repo
+const getChartOptions = () => {
+return {
+    series: [23, 13, 21, 10],
+    colors: ["#f7da5b", "#e5c53f", "#ffefad", "#c3a53f"],
+    chart: {
+      height: 480,
+      width: "100%",
+      type: "donut",
+    },
+    stroke: {
+      colors: ["transparent"],
+      lineCap: "",
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          labels: {
+            show: true,
+            name: {
+              show: true,
+              fontFamily: "Inter, sans-serif",
+              offsetY: 20,
+            },
+            total: {
+              showAlways: true,
+              show: true,
+              label: "Total",
+              fontFamily: "Inter, sans-serif",
+              formatter: function (w) {
+                const sum = w.globals.seriesTotals.reduce((a, b) => {
+                  return a + b
+                }, 0)
+                return sum
+              },
+            },
+            value: {
+              show: true,
+              fontFamily: "Inter, sans-serif",
+              offsetY: -20,
+              formatter: function (value) {
+                return value
+              },
+            },
+          },
+          size: "80%",
+        },
+      },
+    },
+    grid: {
+      padding: {
+        top: -2,
+      },
+    },
+    labels: ["Students", "Faculty", "Staff", "Non-UP"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      position: "bottom",
+      fontFamily: "Inter, sans-serif",
+    },
+    yaxis: {
+      labels: {
+        formatter: function (value) {
+          return value
+        },
+      },
+    },
+    xaxis: {
+      labels: {
+        formatter: function (value) {
+          return value
+        },
+      },
+      axisTicks: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+    },
+  }
+}
+
+if (document.getElementById("donut-chart") && typeof ApexCharts !== 'undefined') {
+  const chart = new ApexCharts(document.getElementById("donut-chart"), getChartOptions());
+  chart.render();
+  // radio buttons
+  const radio = document.querySelectorAll('ul li input[type="radio"]');
+
+  function handleChartChange(event, chart) {
+      const radioA = event.target;
+      if (radioA.checked) {
+          switch(radioA.value) {
+            case 'radio-1':
+              chart.updateSeries([23, 13, 21, 10]);
+              break;
+            case 'radio-2':
+              chart.updateSeries([69, 25, 8, 2]);
+              break;
+            default:
+              chart.updateSeries([23, 13, 21, 10]);
+          }
+      }
+  }
+
+  radio.forEach((radio) => {
+    radio.addEventListener('change', (event) => handleChartChange(event, chart));
+  });
+}
+</script>
 <footer class="flex">
     <div class="resources-footer">
         <button href="/services">SERVICES</button>
